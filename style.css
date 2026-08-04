@@ -1,0 +1,2201 @@
+/* =====================================================
+   OYKAWA HUB V2
+   PART 1
+   RESET + BACKGROUND + HEADER + HERO
+===================================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:Poppins,sans-serif;
+
+background:linear-gradient(135deg,#dbeafe,#eef6ff,#d6e9ff);
+
+color:#1e293b;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/* ================= BACKGROUND ================= */
+
+#background{
+
+position:fixed;
+
+inset:0;
+
+z-index:-5;
+
+background:
+
+radial-gradient(circle at top left,#ffffff 0%,transparent 35%),
+
+radial-gradient(circle at bottom right,#cfe4ff 0%,transparent 45%),
+
+linear-gradient(135deg,#dbeafe,#eef6ff,#d6e9ff);
+
+}
+
+/* ================= HEADER ================= */
+
+header{
+
+position:sticky;
+
+top:18px;
+
+width:min(1400px,95%);
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+padding:18px 22px;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+border-radius:24px;
+
+box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+z-index:1000;
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:700;
+
+white-space:nowrap;
+
+}
+
+.search{
+
+flex:1;
+
+}
+
+.search input{
+
+width:100%;
+
+padding:15px 18px;
+
+border:none;
+
+outline:none;
+
+background:white;
+
+border-radius:18px;
+
+font-size:16px;
+
+}
+
+#theme{
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:18px;
+
+background:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#theme:hover{
+
+transform:scale(1.08);
+
+}
+
+/* ================= HERO ================= */
+
+.hero{
+
+padding:50px 20px;
+
+}
+
+.hero-layout{
+
+max-width:1400px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:240px 1fr 300px;
+
+gap:28px;
+
+align-items:start;
+
+}
+
+/* ================= LEFT ================= */
+
+.left-column{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.avatar-card{
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+padding:18px;
+
+box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.avatar-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.avatar-main{
+
+width:100%;
+
+display:block;
+
+border-radius:22px;
+
+}
+
+/* ================= CENTER ================= */
+
+.center-column{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+/* Greeting */
+
+.hero-card{
+
+position:relative;
+
+overflow:hidden;
+
+padding:55px;
+
+border-radius:35px;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 18px 45px rgba(0,0,0,.08);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+min-height:360px;
+
+transition:.5s;
+
+}
+
+.hero-card::before{
+
+content:"";
+
+position:absolute;
+
+width:260px;
+
+height:260px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.25);
+
+top:-120px;
+
+right:-120px;
+
+filter:blur(25px);
+
+}
+
+#greeting{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:15px;
+
+}
+
+.greeting-icon{
+
+font-size:64px;
+
+margin-bottom:8px;
+
+animation:floatIcon 1s ease-in-out infinite;
+
+}
+
+.greeting-text{
+
+font-size:clamp(34px,4vw,52px);
+
+font-weight:700;
+
+line-height:1.1;
+
+white-space:nowrap;
+
+}
+
+.hero-card h2{
+
+margin-top:10px;
+
+font-size:40px;
+
+}
+
+.subtitle{
+
+margin-top:12px;
+
+font-size:18px;
+
+opacity:.75;
+
+}
+
+/* ================= CLOCK ================= */
+
+.hero-info{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:25px;
+
+}
+
+.info-card{
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+padding:30px;
+
+border-radius:28px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.info-card .icon{
+
+font-size:28px;
+
+margin-bottom:10px;
+
+}
+
+.info-card p{
+
+font-size:46px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+margin:12px 0;
+
+}
+
+.info-card span{
+
+opacity:.65;
+
+}
+
+/* ================= RIGHT ================= */
+
+.right-column{
+
+display:flex;
+
+}
+
+.shortcut-card{
+
+width:100%;
+
+padding:30px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+min-height:620px;
+
+}
+
+.shortcut-card h3{
+
+font-size:28px;
+
+margin-bottom:25px;
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes floatSun{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+/* =====================================================
+   OYKAWA HUB V2
+   PART 2
+   DASHBOARD
+=====================================================*/
+
+/* ================= WIDGET GRID ================= */
+
+.widget-grid{
+
+max-width:1400px;
+
+margin:40px auto;
+
+padding:0 20px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+border-radius:28px;
+
+padding:28px;
+
+box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+transition:.35s;
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.12);
+
+}
+
+.card h3{
+
+font-size:24px;
+
+margin-bottom:5px;
+
+}
+
+/* ================= NOTES ================= */
+
+#noteArea{
+
+width:100%;
+
+height:220px;
+
+resize:none;
+
+border:none;
+
+outline:none;
+
+padding:18px;
+
+border-radius:20px;
+
+font-family:Poppins,sans-serif;
+
+font-size:15px;
+
+background:white;
+
+box-shadow:inset 0 3px 8px rgba(0,0,0,.05);
+
+}
+
+/* ================= HABIT ================= */
+
+.card label{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px 16px;
+
+border-radius:18px;
+
+background:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.card label:hover{
+
+transform:translateX(6px);
+
+}
+
+.card input[type="checkbox"]{
+
+width:22px;
+
+height:22px;
+
+cursor:pointer;
+
+}
+
+/* ================= PROJECT ================= */
+
+.project{
+
+padding:16px;
+
+border:none;
+
+border-radius:18px;
+
+background:white;
+
+font-size:15px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.project:hover{
+
+transform:scale(1.03);
+
+background:#dbeafe;
+
+}
+
+/* ================= SHORTCUT ================= */
+
+#shortcuts{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.shortcut{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:16px 18px;
+
+border-radius:18px;
+
+background:white;
+
+text-decoration:none;
+
+color:#1e293b;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.shortcut:hover{
+
+transform:translateX(8px);
+
+background:#eff6ff;
+
+}
+
+#addShortcut{
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:18px;
+
+background:#3b82f6;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#addShortcut:hover{
+
+transform:translateY(-3px);
+
+background:#2563eb;
+
+}
+
+/* ================= FAVORITE ================= */
+
+.favorite-item{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:14px 18px;
+
+border-radius:18px;
+
+background:white;
+
+margin-bottom:12px;
+
+transition:.3s;
+
+}
+
+.favorite-item:hover{
+
+transform:translateX(5px);
+
+}
+
+/* ================= BUTTON ================= */
+
+button{
+
+font-family:Poppins,sans-serif;
+
+}
+
+/* =====================================================
+   OYKAWA HUB V2
+   PART 3
+   ABOUT • SKILLS • PROJECTS • CONTACT
+===================================================== */
+
+/* ================= SECTION ================= */
+
+.section{
+
+max-width:1400px;
+
+margin:80px auto;
+
+padding:0 20px;
+
+}
+
+.section h2{
+
+font-size:42px;
+
+text-align:center;
+
+margin-bottom:40px;
+
+font-weight:700;
+
+}
+
+.section>p{
+
+max-width:800px;
+
+margin:auto;
+
+text-align:center;
+
+line-height:1.8;
+
+opacity:.75;
+
+}
+
+/* ================= ABOUT ================= */
+
+.about-card{
+
+display:grid;
+
+grid-template-columns:280px 1fr;
+
+gap:40px;
+
+padding:35px;
+
+background:rgba(255,255,255,.45);
+
+backdrop-filter:blur(20px);
+
+border-radius:35px;
+
+box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+align-items:center;
+
+}
+
+.about-avatar{
+
+width:100%;
+
+border-radius:28px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+transition:.35s;
+
+}
+
+.about-avatar:hover{
+
+transform:scale(1.03);
+
+}
+
+.about-text h3{
+
+font-size:34px;
+
+margin-bottom:20px;
+
+}
+
+.about-text p{
+
+font-size:17px;
+
+line-height:1.9;
+
+opacity:.8;
+
+margin-bottom:25px;
+
+}
+
+.about-tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+}
+
+.about-tags span{
+
+padding:12px 20px;
+
+background:white;
+
+border-radius:999px;
+
+font-size:15px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+transition:.3s;
+
+}
+
+.about-tags span:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* ================= SKILL CARD ================= */
+
+#skills .card{
+
+text-align:center;
+
+}
+
+#skills .card h3{
+
+font-size:26px;
+
+margin-bottom:15px;
+
+}
+
+#skills .card p{
+
+opacity:.75;
+
+line-height:1.7;
+
+}
+
+/* ================= PROJECT CARD ================= */
+
+#projects .card{
+
+min-height:230px;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+}
+
+#projects .card h3{
+
+font-size:28px;
+
+margin-bottom:18px;
+
+}
+
+#projects .card p{
+
+opacity:.75;
+
+}
+
+/* ================= CONTACT ================= */
+
+#contact{
+
+text-align:center;
+
+padding-bottom:80px;
+
+}
+
+#contact p{
+
+font-size:18px;
+
+line-height:2;
+
+opacity:.8;
+
+}
+
+/* ================= FOOTER STYLE ================= */
+
+footer{
+
+margin-top:80px;
+
+padding:30px;
+
+text-align:center;
+
+opacity:.6;
+
+font-size:15px;
+
+}
+
+/* =====================================================
+   OYKAWA HUB V2
+   PART 4
+   RESPONSIVE + DARK MODE + ANIMATION
+===================================================== */
+
+/* ================= TABLET ================= */
+
+@media (max-width:1100px){
+
+.hero-layout{
+
+grid-template-columns:220px 1fr;
+
+}
+
+.right-column{
+
+grid-column:1 / -1;
+
+}
+
+.shortcut-card{
+
+min-height:auto;
+
+}
+
+.widget-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.about-card{
+
+grid-template-columns:220px 1fr;
+
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+header{
+
+flex-wrap:wrap;
+
+gap:15px;
+
+padding:18px;
+
+}
+
+.logo{
+
+width:100%;
+
+text-align:center;
+
+font-size:26px;
+
+}
+
+.search{
+
+width:100%;
+
+margin:0;
+
+}
+
+#theme{
+
+margin:auto;
+
+}
+
+.hero{
+
+padding:30px 15px;
+
+}
+
+.hero-layout{
+
+grid-template-columns:1fr;
+
+gap:22px;
+
+}
+
+.left-column{
+
+flex-direction:row;
+
+gap:18px;
+
+}
+
+.avatar-card{
+
+flex:1;
+
+}
+
+.center-column{
+
+order:2;
+
+}
+
+.right-column{
+
+order:3;
+
+}
+
+.hero-card{
+
+padding:30px 22px;
+
+min-height:auto;
+
+}
+
+.hero-card h2{
+
+font-size:30px;
+
+}
+
+.subtitle{
+
+font-size:15px;
+
+}
+
+.greeting-circle{
+
+width:75px;
+
+height:75px;
+
+}
+
+.greeting-icon{
+
+font-size:34px;
+
+}
+
+.greeting-text{
+
+font-size:32px;
+
+white-space:normal;
+
+text-align:center;
+
+}
+
+.hero-info{
+
+grid-template-columns:1fr;
+
+}
+
+.info-card{
+
+padding:25px;
+
+}
+
+.info-card p{
+
+font-size:28px;
+
+}
+
+.widget-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.about-card{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.about-text{
+
+text-align:center;
+
+}
+
+.about-tags{
+
+justify-content:center;
+
+}
+
+.section h2{
+
+font-size:34px;
+
+}
+
+}
+
+/* ================= SMALL PHONE ================= */
+
+@media (max-width:480px){
+
+.left-column{
+
+flex-direction:column;
+
+}
+
+.avatar-card{
+
+width:100%;
+
+}
+
+.hero-card h2{
+
+font-size:26px;
+
+}
+
+.greeting-text{
+
+font-size:28px;
+
+}
+
+.info-card p{
+
+font-size:24px;
+
+}
+
+}
+
+/* ================= SMOOTH ================= */
+
+.card,
+.hero-card,
+.avatar-card,
+.info-card,
+.shortcut-card,
+.about-card{
+
+transition:all .35s ease;
+
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark{
+
+background:linear-gradient(135deg,#0f172a,#111827,#1e293b);
+
+color:#f8fafc;
+
+}
+
+body.dark #background{
+
+background:
+radial-gradient(circle at top left,#33415555,transparent 35%),
+radial-gradient(circle at bottom right,#1e293b88,transparent 40%),
+linear-gradient(135deg,#0f172a,#111827,#1e293b);
+
+}
+
+body.dark header,
+body.dark .card,
+body.dark .hero-card,
+body.dark .info-card,
+body.dark .shortcut-card,
+body.dark .about-card,
+body.dark .avatar-card{
+
+background:rgba(30,41,59,.75);
+
+color:#f8fafc;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+body.dark input,
+body.dark textarea,
+body.dark button,
+body.dark .shortcut,
+body.dark .about-tags span{
+
+background:#334155;
+
+color:#f8fafc;
+
+border:none;
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#94a3b8;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:transparent;
+
+}
+/* =========================
+   DARK MODE - HABIT TRACKER
+========================= */
+
+body.dark .card label{
+
+display:block;
+
+padding:12px 15px;
+
+margin:10px 0;
+
+border-radius:15px;
+
+background:#334155;
+
+color:#f8fafc;
+
+}
+
+body.dark .card label:hover{
+
+background:#475569;
+
+}
+
+body.dark .card input[type="checkbox"]{
+
+accent-color:#60a5fa;
+
+}
+
+.hero-card{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.hero-card::before{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:rgba(255,255,255,.18);
+
+border-radius:50%;
+
+right:-120px;
+
+top:-140px;
+
+filter:blur(45px);
+
+}
+
+.hero-card::after{
+
+content:"";
+
+position:absolute;
+
+left:-120px;
+
+bottom:-120px;
+
+width:250px;
+
+height:250px;
+
+background:rgba(255,255,255,.15);
+
+border-radius:50%;
+
+filter:blur(35px);
+
+}
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(35px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.left-column{
+
+animation:fadeUp .8s;
+
+}
+
+.center-column{
+
+animation:fadeUp 1s;
+
+}
+
+.right-column{
+
+animation:fadeUp 1.2s;
+
+}
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+
+height:700px;
+
+background:#60a5fa22;
+
+border-radius:50%;
+
+left:-250px;
+
+top:-200px;
+
+filter:blur(120px);
+
+animation:bgFloat 18s ease-in-out infinite;
+
+pointer-events:none;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:600px;
+
+height:600px;
+
+background:#818cf822;
+
+border-radius:50%;
+
+right:-220px;
+
+bottom:-180px;
+
+filter:blur(120px);
+
+animation:bgFloat2 22s ease-in-out infinite;
+
+pointer-events:none;
+
+}
+
+@keyframes bgFloat{
+
+50%{
+
+transform:translateY(60px);
+
+}
+
+}
+
+@keyframes bgFloat2{
+
+50%{
+
+transform:translateY(-60px);
+
+}
+
+}
+
+.hero-card::before{
+
+content:"";
+
+position:absolute;
+
+top:-120%;
+
+left:-40%;
+
+width:60%;
+
+height:300%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transform:rotate(20deg);
+
+animation:shine 8s linear infinite;
+
+}
+
+@keyframes shine{
+
+0%{
+
+left:-80%;
+
+}
+
+100%{
+
+left:180%;
+
+}
+
+}
+/* ===========================
+   HIDDEN VAULT
+=========================== */
+
+.vault{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(12px);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+animation:fadeVault .35s;
+
+}
+
+.vault.show{
+
+display:flex;
+
+}
+
+@keyframes fadeVault{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+.vault-box{
+
+width:min(900px,92%);
+
+max-height:88vh;
+
+overflow:auto;
+
+padding:30px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.88);
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 30px 80px rgba(0,0,0,.25);
+
+animation:pop .35s;
+
+}
+
+@keyframes pop{
+
+from{
+
+transform:scale(.9);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.vault-box h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+font-size:34px;
+
+}
+
+.vault-tabs{
+
+display:flex;
+
+gap:15px;
+
+margin-bottom:25px;
+
+}
+
+.tab{
+
+flex:1;
+
+padding:15px;
+
+border:none;
+
+border-radius:16px;
+
+font-size:16px;
+
+cursor:pointer;
+
+background:#e2e8f0;
+
+transition:.3s;
+
+}
+
+.tab.active{
+
+background:#3b82f6;
+
+color:white;
+
+}
+
+.vault-page{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.vault-page input{
+
+padding:15px;
+
+border:none;
+
+border-radius:15px;
+
+background:#f1f5f9;
+
+font-size:16px;
+
+}
+
+.vault-page textarea{
+
+min-height:260px;
+
+padding:18px;
+
+border:none;
+
+border-radius:18px;
+
+resize:vertical;
+
+background:#f1f5f9;
+
+font-size:16px;
+
+font-family:Poppins,sans-serif;
+
+}
+
+#saveQuote{
+
+padding:16px;
+
+border:none;
+
+border-radius:15px;
+
+background:#2563eb;
+
+color:white;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+
+#closeVault{
+
+margin-top:25px;
+
+width:100%;
+
+padding:16px;
+
+border:none;
+
+border-radius:18px;
+
+background:#ef4444;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+#quoteList{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+}
+
+.quote-item{
+
+padding:18px;
+
+border-radius:18px;
+
+background:#f8fafc;
+
+box-shadow:0 5px 15px rgba(0,0,0,.05);
+
+}
+
+.quote-item b{
+
+display:block;
+
+margin-top:8px;
+
+opacity:.6;
+
+}
+
+.autosave{
+
+text-align:right;
+
+opacity:.6;
+
+font-size:14px;
+
+}
+
+/* DARK MODE */
+
+body.dark .vault-box{
+
+background:#1e293b;
+
+color:white;
+
+}
+
+body.dark .vault-page input,
+body.dark .vault-page textarea{
+
+background:#334155;
+
+color:white;
+
+}
+
+body.dark .quote-item{
+
+background:#334155;
+
+}
+
+body.dark .tab{
+
+background:#475569;
+
+color:white;
+
+}
+
+body.dark .tab.active{
+
+background:#2563eb;
+
+}
+/* ===========================
+   HERO QUOTE
+=========================== */
+
+.hero-quote{
+
+margin-top:35px;
+
+width:100%;
+
+padding:22px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.25);
+
+transition:.35s;
+
+}
+
+.hero-quote:hover{
+
+transform:translateY(-3px);
+
+background:rgba(255,255,255,.25);
+
+}
+
+.quote-mark{
+
+font-size:42px;
+
+opacity:.35;
+
+margin-bottom:8px;
+
+}
+
+#dailyQuote{
+
+font-size:18px;
+
+line-height:1.7;
+
+font-style:italic;
+
+font-weight:500;
+
+}
+
+#dailyQuoteAuthor{
+
+display:block;
+
+margin-top:14px;
+
+font-size:15px;
+
+opacity:.75;
+
+font-weight:600;
+
+}
+
+/* Dark Mode */
+
+body.dark .hero-quote{
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+@keyframes floatIcon{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+}
+/* ==================================
+   DYNAMIC HERO THEME
+================================== */
+
+/* PAGI */
+.hero-card.morning{
+background:linear-gradient(135deg,#FFE29A,#FFF6D5);
+}
+
+/* SIANG */
+.hero-card.afternoon{
+background:linear-gradient(135deg,#87CEEB,#DFF5FF);
+}
+
+/* SORE */
+.hero-card.evening{
+background:linear-gradient(135deg,#FFB56B,#C792EA);
+color:white;
+}
+
+/* MALAM */
+.hero-card.night{
+background:linear-gradient(135deg,#0F172A,#1E3A8A);
+color:white;
+}
+
+.hero-card.night .subtitle,
+.hero-card.evening .subtitle{
+
+color:rgba(255,255,255,.8);
+
+}
+/* Awan siang */
+
+.hero-card.afternoon::after{
+
+content:"☁️";
+
+position:absolute;
+
+top:30px;
+
+left:-60px;
+
+font-size:42px;
+
+animation:cloudMove 18s linear infinite;
+
+opacity:.9;
+
+}
+
+@keyframes cloudMove{
+
+0%{
+left:-60px;
+}
+
+100%{
+left:110%;
+}
+
+}
+
+/* Bintang malam */
+
+.hero-card.night::after{
+
+content:"✦ ✧ ✦ ✦ ✧";
+
+position:absolute;
+
+top:25px;
+
+right:25px;
+
+font-size:20px;
+
+letter-spacing:6px;
+
+opacity:.75;
+
+animation:twinkle 2.5s ease-in-out infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.3;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+}
+
+/* Matahari pagi */
+
+.hero-card.morning .greeting-icon{
+
+filter:drop-shadow(0 0 12px rgba(255,180,0,.6));
+
+}
+
+/* Matahari siang */
+
+.hero-card.afternoon .greeting-icon{
+
+filter:drop-shadow(0 0 15px rgba(255,210,0,.8));
+
+}
+
+/* Bulan malam */
+
+.hero-card.night .greeting-icon{
+
+filter:drop-shadow(0 0 18px rgba(255,255,255,.6));
+
+}
+.hero-banner{
+
+display:flex;
+
+justify-content:center;
+
+margin:35px 0 20px;
+
+}
+
+.doodle{
+
+max-width:520px;
+
+width:90%;
+
+height:auto;
+
+transition:.35s;
+
+}
+
+.doodle:hover{
+
+transform:scale(1.03);
+
+}
+/* ===========================
+   PROJECT ACCORDION
+=========================== */
+
+.project-item{
+
+margin-bottom:15px;
+
+}
+
+.project-btn{
+
+width:100%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:16px 18px;
+
+border:none;
+
+border-radius:18px;
+
+background:white;
+
+cursor:pointer;
+
+font-size:16px;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.project-btn:hover{
+
+transform:translateX(5px);
+
+}
+
+.project-btn span{
+
+font-size:22px;
+
+transition:.35s;
+
+}
+
+.project-content{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height .35s ease,padding .35s;
+
+padding:0 15px;
+
+line-height:1.7;
+
+opacity:.8;
+
+}
+
+.project-item.active .project-content{
+
+max-height:250px;
+
+padding:18px 15px;
+
+}
+
+.project-item.active .project-btn span{
+
+transform:rotate(45deg);
+
+}
+body.dark .project-btn{
+
+background:#334155;
+
+color:white;
+
+}
+
+body.dark .project-content{
+
+color:#e2e8f0;
+
+}
+/* =========================
+   HERO TIME THEME
+   Tetap aktif saat Dark Mode
+========================= */
+
+body.dark .hero-card.morning{
+background:linear-gradient(135deg,#FFE082,#FFF3E0);
+color:#1e293b;
+}
+
+body.dark .hero-card.afternoon{
+background:linear-gradient(135deg,#87CEEB,#EAF8FF);
+color:#1e293b;
+}
+
+body.dark .hero-card.evening{
+background:linear-gradient(135deg,#FFB74D,#CE93D8);
+color:white;
+}
+
+body.dark .hero-card.night{
+background:linear-gradient(135deg,#16213E,#283593);
+color:white;
+}
+
+body.dark .hero-card.night .subtitle{
+color:#dbeafe;
+}
+body.dark .hero-card.night::after{
+
+content:"✦ ✧ ✦ ✦";
+
+position:absolute;
+
+top:25px;
+
+right:30px;
+
+font-size:20px;
+
+opacity:.7;
+
+animation:stars 2.5s ease-in-out infinite;
+
+}
